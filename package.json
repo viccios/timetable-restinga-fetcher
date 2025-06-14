@@ -1,0 +1,31 @@
+{
+  "name": "timetable-restinga-fetcher",
+  "version": "1.0.0",
+  "description": "Timetable Restinga fetcher written in JavaScript and Node.js - WIP",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env ./src/server.js",
+    "dev": "node --watch --env-file=.env ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viccios/timetable-restinga-fetcher.git"
+  },
+  "keywords": [],
+  "author": "Vinícius Nunes de Oliveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viccios/timetable-restinga-fetcher/issues"
+  },
+  "homepage": "https://github.com/viccios/timetable-restinga-fetcher#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "eslint": "^9.29.0",
+    "globals": "^16.2.0",
+    "prettier": "^3.5.3"
+  }
+}

@@ -19,10 +19,14 @@ A documentação da API, incluindo seus _endpoints_, está disponível on-line e
 
 Clone o repositório:
 `git clone https://github.com/viccios/timetable-restinga-fetcher.git`
+
 Instale as dependências:
 `npm install`
+
 Crie o arquivo `.env` (um arquivo `.env.example` está disponível como referência):
 `touch .env` ou `cp .env.example .env`
+
 Inicie o servidor:
 `npm start`
+
 Para desenvolvimento, use o comando `npm run dev`

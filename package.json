@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/viccios/timetable-restinga-fetcher#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^5.1.0"
   },
   "devDependencies": {

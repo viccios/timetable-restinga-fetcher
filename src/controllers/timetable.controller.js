@@ -1,69 +1,55 @@
-import process from 'node:process';
+import { fetchHorarioTurmas } from '../utils/fetchHorarioTurmas.js';
 
-async function fetchTimetable() {
-  try {
-    const response = await fetch(process.env.TIMETABLE_DATABASE_URL, {
-      method: 'POST',
-      body: process.env.TIMETABLE_REQUEST_PAYLOAD,
-    });
+const {
+  periodos,
+  disciplinas,
+  professores,
+  turmas,
+  salasDeAula,
+  horarioTurmas,
+  horarioProfessores,
+  horarioSalasDeAula,
+} = await fetchHorarioTurmas();
 
-    const json = await response.json();
-
-    return json;
-  } catch (error) {
-    throw new Error(error);
-  }
-}
-
-const schedule = await fetchTimetable();
-
-function getTeachers(_, res) {
-  const teachers = schedule.r.tables[0].data_rows;
-  res.status(200).json(teachers);
+function getPeriods(_, res) {
+  res.status(200).json(periodos);
 }
 
 function getSubjects(_, res) {
-  const subjects = schedule.r.tables[1].data_rows;
-  res.status(200).json(subjects);
+  res.status(200).json(disciplinas);
 }
 
-function getClassrooms(_, res) {
-  const classrooms = schedule.r.tables[2].data_rows;
-  res.status(200).json(classrooms);
+function getTeachers(_, res) {
+  res.status(200).json(professores);
 }
 
 function getClasses(_, res) {
-  const classes = schedule.r.tables[3].data_rows;
-  res.status(200).json(classes);
+  res.status(200).json(turmas);
 }
 
-function getPeriods(_, res) {
-  const periods = schedule.r.tables[6].data_rows;
-  res.status(200).json(periods);
+function getClassrooms(_, res) {
+  res.status(200).json(salasDeAula);
 }
 
-function getDayParts(_, res) {
-  const dayParts = schedule.r.tables[7].data_rows;
-  res.status(200).json(dayParts);
+function getClassSchedule(_, res) {
+  res.status(200).json(horarioTurmas);
 }
 
-function getDates(_, res) {
-  const dates = schedule.r.tables[8].data_rows;
-  res.status(200).json(dates);
+function getTeachersSchedule(_, res) {
+  res.status(200).json(horarioProfessores);
 }
 
-function getEventTypes(_, res) {
-  const eventTypes = schedule.r.tables[10].data_rows;
-  res.status(200).json(eventTypes);
+function getClassroomsSchedule(_, res) {
+  res.status(200).json(horarioSalasDeAula);
 }
 
 export {
   getTeachers,
-  getSubjects,
-  getClassrooms,
-  getClasses,
   getPeriods,
-  getDayParts,
-  getDates,
-  getEventTypes,
+  getSubjects,
+  getClasses,
+  getClassrooms,
+  getClassSchedule,
+  getTeachersSchedule,
+  getClassroomsSchedule,
 };

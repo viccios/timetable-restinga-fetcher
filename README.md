@@ -4,25 +4,24 @@
 
 ## Sumário
 
-- [Sobre](#sobre)
-- [Como funciona](#como-funciona)
-- [Documentação](#documentação)
-- [Instalação](#instalação)
+- [Sobre](#-sobre)
+- [Como funciona](#-como-funciona)
+- [Documentação](#-documentação)
+- [Instalação](#-instalação)
 
-## Sobre
+## 🧠 Sobre
 
 Timetable Restinga Fetcher é uma API HTTP que recupera informações de horário do servidor do Timetable — Campus Restinga, permitindo o acesso simples a estes dados.
 
-## Como funciona
+## 💭 Como funciona
 
-Os dados são recuperados a partir de uma carga inicial feita pelo front-end do Timetable Restinga e fornecidos através da API HTTP de forma simplificada.
-Assim, é possível acessar o cronograma do Campus, incluindo os horários de professores, aulas e turmas.
+Este projeto usa a função `fetchHorarioTurmas` do projeto [Edupage Restinga Horários](https://github.com/RaissonGitHub/Edupage-Restinga-Horarios) para fornecer os dados do Timetable Restinga de forma estruturada através de uma API HTTP fácil de consumir.
 
-## Documentação
+## 📜 Documentação
 
 A documentação da API, incluindo seus _endpoints_, está disponível on-line em: <https://viccios.github.io/timetable-restinga-fetcher/>
 
-## Instalação
+## 💪 Instalação
 
 Clone o repositório:
 `git clone https://github.com/viccios/timetable-restinga-fetcher.git`

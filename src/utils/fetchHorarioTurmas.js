@@ -2,9 +2,8 @@ import axios from 'axios';
 import { Agent } from 'https';
 
 export async function fetchHorarioTurmas() {
-  const url =
-    'https://restinga.edupage.org/timetable/server/regulartt.js?__func=regularttGetData';
-  const body = { __args: [null, '47'], __gsh: '00000000' };
+  const url = process.env.TIMETABLE_DATABASE_URL;
+  const body = JSON.parse(process.env.TIMETABLE_REQUEST_PAYLOAD);
 
   // força IPv4 (evita ENETUNREACH p/ IPv6)
   // So consegui acessar dessa forma

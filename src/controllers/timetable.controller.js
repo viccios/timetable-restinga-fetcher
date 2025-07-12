@@ -44,9 +44,9 @@ function getClassroomsSchedule(_, res) {
 }
 
 export {
-  getTeachers,
   getPeriods,
   getSubjects,
+  getTeachers,
   getClasses,
   getClassrooms,
   getClassSchedule,

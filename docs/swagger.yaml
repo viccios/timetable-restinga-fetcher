@@ -6,60 +6,6 @@ info:
 servers:
   - url: https://timetablerestingafetcher.onrender.com/
 paths:
-  /api/teachers:
-    parameters: []
-    get:
-      summary: Teachers
-      parameters: []
-      responses:
-        '200':
-          headers:
-            X-Powered-By:
-              schema:
-                type: string
-              example: Express
-            Access-Control-Allow-Origin:
-              schema:
-                type: string
-              example: '*'
-            Content-Type:
-              schema:
-                type: string
-              example: application/json; charset=utf-8
-            Content-Length:
-              schema:
-                type: integer
-              example: '4950'
-            ETag:
-              schema:
-                type: string
-              example: W/"1356-XvrjBC9qSK02ffNzGkJFzN4F2mw"
-            Date:
-              schema:
-                type: string
-              example: Sat, 12 Jul 2025 03:42:23 GMT
-            Connection:
-              schema:
-                type: string
-              example: keep-alive
-            Keep-Alive:
-              schema:
-                type: string
-              example: timeout=5
-          description: Teachers
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: string
-                    name:
-                      type: string
-                    short:
-                      type: string
   /api/periods:
     parameters: []
     get:
@@ -166,6 +112,60 @@ paths:
                 type: string
               example: timeout=5
           description: Subjects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    name:
+                      type: string
+                    short:
+                      type: string
+  /api/teachers:
+    parameters: []
+    get:
+      summary: Teachers
+      parameters: []
+      responses:
+        '200':
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+              example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+              example: '*'
+            Content-Type:
+              schema:
+                type: string
+              example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+              example: '4950'
+            ETag:
+              schema:
+                type: string
+              example: W/"1356-XvrjBC9qSK02ffNzGkJFzN4F2mw"
+            Date:
+              schema:
+                type: string
+              example: Sat, 12 Jul 2025 03:42:23 GMT
+            Connection:
+              schema:
+                type: string
+              example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+              example: timeout=5
+          description: Teachers
           content:
             application/json:
               schema:

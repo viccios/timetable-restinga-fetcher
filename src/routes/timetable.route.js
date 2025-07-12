@@ -1,8 +1,8 @@
 import { Router } from 'express';
 import {
-  getTeachers,
   getPeriods,
   getSubjects,
+  getTeachers,
   getClasses,
   getClassrooms,
   getClassSchedule,
@@ -12,9 +12,9 @@ import {
 
 const router = Router();
 
-router.get('/teachers', getTeachers);
 router.get('/periods', getPeriods);
 router.get('/subjects', getSubjects);
+router.get('/teachers', getTeachers);
 router.get('/classes', getClasses);
 router.get('/classrooms', getClassrooms);
 router.get('/class_schedule', getClassSchedule);

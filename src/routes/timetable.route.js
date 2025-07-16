@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import asyncWrapper from '../utils/async-wrapper.js';
 import {
   getPeriods,
   getSubjects,
@@ -22,23 +23,23 @@ import {
 const router = Router();
 
 // Rotas originais (listar todos)
-router.get('/periods', getPeriods);
-router.get('/subjects', getSubjects);
-router.get('/teachers', getTeachers);
-router.get('/classes', getClasses);
-router.get('/classrooms', getClassrooms);
-router.get('/classhours', getClassSchedule);
-router.get('/teachershours', getTeachersSchedule);
-router.get('/classroomshours', getClassroomsSchedule);
+router.get('/periods', asyncWrapper(getPeriods));
+router.get('/subjects', asyncWrapper(getSubjects));
+router.get('/teachers', asyncWrapper(getTeachers));
+router.get('/classes', asyncWrapper(getClasses));
+router.get('/classrooms', asyncWrapper(getClassrooms));
+router.get('/classhours', asyncWrapper(getClassSchedule));
+router.get('/teachershours', asyncWrapper(getTeachersSchedule));
+router.get('/classroomshours', asyncWrapper(getClassroomsSchedule));
 
 // Rotas de busca com query parameters
-router.get('/periods/search', searchPeriods);
-router.get('/subjects/search', searchSubjects);
-router.get('/teachers/search', searchTeachers);
-router.get('/classes/search', searchClasses);
-router.get('/classrooms/search', searchClassrooms);
-router.get('/classhours/search', searchClassSchedule);
-router.get('/teachershours/search', searchTeacherSchedule);
-router.get('/classroomshours/search', searchClassroomSchedule);
+router.get('/periods/search', asyncWrapper(searchPeriods));
+router.get('/subjects/search', asyncWrapper(searchSubjects));
+router.get('/teachers/search', asyncWrapper(searchTeachers));
+router.get('/classes/search', asyncWrapper(searchClasses));
+router.get('/classrooms/search', asyncWrapper(searchClassrooms));
+router.get('/classhours/search', asyncWrapper(searchClassSchedule));
+router.get('/teachershours/search', asyncWrapper(searchTeacherSchedule));
+router.get('/classroomshours/search', asyncWrapper(searchClassroomSchedule));
 
 export default router;

@@ -4,7 +4,7 @@ info:
   version: 1.0.0
   description: ''
 servers:
-  - url: https://timetablerestingafetcher.onrender.com/
+  - url: https://timetablerestingafetcher.onrender.com
 paths:
   /api/periods:
     parameters: []
@@ -37,7 +37,7 @@ paths:
             Date:
               schema:
                 type: string
-              example: Sat, 12 Jul 2025 03:43:10 GMT
+              example: Sat, 12 Jul 2025 20:27:33 GMT
             Connection:
               schema:
                 type: string
@@ -82,34 +82,50 @@ paths:
             X-Powered-By:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: Express
             Access-Control-Allow-Origin:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: '*'
             Content-Type:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: application/json; charset=utf-8
             Content-Length:
               schema:
-                type: integer
+                type: string
+                minLength: 0
+                maxLength: 0
               example: '23885'
             ETag:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: W/"5d4d-PModdZ9x2e8m+29UBQTX5vXZMec"
             Date:
               schema:
                 type: string
-              example: Sat, 12 Jul 2025 03:43:46 GMT
+                minLength: 0
+                maxLength: 0
+              example: Sat, 12 Jul 2025 20:28:16 GMT
             Connection:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: keep-alive
             Keep-Alive:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: timeout=5
           description: Subjects
           content:
@@ -136,34 +152,50 @@ paths:
             X-Powered-By:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: Express
             Access-Control-Allow-Origin:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: '*'
             Content-Type:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: application/json; charset=utf-8
             Content-Length:
               schema:
-                type: integer
+                type: string
+                minLength: 0
+                maxLength: 0
               example: '4950'
             ETag:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: W/"1356-XvrjBC9qSK02ffNzGkJFzN4F2mw"
             Date:
               schema:
                 type: string
-              example: Sat, 12 Jul 2025 03:42:23 GMT
+                minLength: 0
+                maxLength: 0
+              example: Sat, 12 Jul 2025 20:28:56 GMT
             Connection:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: keep-alive
             Keep-Alive:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: timeout=5
           description: Teachers
           content:
@@ -210,7 +242,7 @@ paths:
             Date:
               schema:
                 type: string
-              example: Sat, 12 Jul 2025 03:44:13 GMT
+              example: Sat, 12 Jul 2025 20:29:34 GMT
             Connection:
               schema:
                 type: string
@@ -247,34 +279,50 @@ paths:
             X-Powered-By:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: Express
             Access-Control-Allow-Origin:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: '*'
             Content-Type:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: application/json; charset=utf-8
             Content-Length:
               schema:
-                type: integer
+                type: string
+                minLength: 0
+                maxLength: 0
               example: '1696'
             ETag:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: W/"6a0-FpZ+Y4bIrzBhJ7jfEU3d/OEwR8Y"
             Date:
               schema:
                 type: string
-              example: Sat, 12 Jul 2025 03:44:46 GMT
+                minLength: 0
+                maxLength: 0
+              example: Sat, 12 Jul 2025 20:30:09 GMT
             Connection:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: keep-alive
             Keep-Alive:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: timeout=5
           description: Classrooms
           content:
@@ -286,17 +334,14 @@ paths:
                   properties:
                     id:
                       type: string
-                      format: utc-millisec
                     name:
                       type: string
-                      format: color
                     short:
                       type: string
-                      format: color
-  /api/class_schedule:
+  /api/classhours:
     parameters: []
     get:
-      summary: Class schedule
+      summary: Class hours
       parameters: []
       responses:
         '200':
@@ -324,7 +369,7 @@ paths:
             Date:
               schema:
                 type: string
-              example: Sat, 12 Jul 2025 03:45:16 GMT
+              example: Sat, 12 Jul 2025 20:31:00 GMT
             Connection:
               schema:
                 type: string
@@ -333,7 +378,7 @@ paths:
               schema:
                 type: string
               example: timeout=5
-          description: Class schedule
+          description: Classhours
           content:
             application/json:
               schema:
@@ -914,10 +959,10 @@ paths:
                                   items:
                                     type: string
                                     format: style
-  /api/teachers_schedule:
+  /api/teachershours:
     parameters: []
     get:
-      summary: Teachers schedule
+      summary: Teachers hours
       parameters: []
       responses:
         '200':
@@ -945,7 +990,7 @@ paths:
             Date:
               schema:
                 type: string
-              example: Sat, 12 Jul 2025 03:45:56 GMT
+              example: Sat, 12 Jul 2025 20:31:49 GMT
             Connection:
               schema:
                 type: string
@@ -954,7 +999,7 @@ paths:
               schema:
                 type: string
               example: timeout=5
-          description: Teachers schedule
+          description: Teachers hours
           content:
             application/json:
               schema:
@@ -1013,10 +1058,10 @@ paths:
                             items:
                               type: string
                               format: style
-  /api/classrooms_schedule:
+  /api/classroomshours:
     parameters: []
     get:
-      summary: Classrooms schedule
+      summary: Classrooms hours
       parameters: []
       responses:
         '200':
@@ -1024,36 +1069,52 @@ paths:
             X-Powered-By:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: Express
             Access-Control-Allow-Origin:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: '*'
             Content-Type:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: application/json; charset=utf-8
             Content-Length:
               schema:
-                type: integer
+                type: string
+                minLength: 0
+                maxLength: 0
               example: '104876'
             ETag:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: W/"199ac-fi13z8b0LYoXm37Kbrts6xwAESE"
             Date:
               schema:
                 type: string
-              example: Sat, 12 Jul 2025 03:47:08 GMT
+                minLength: 0
+                maxLength: 0
+              example: Sat, 12 Jul 2025 20:32:27 GMT
             Connection:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: keep-alive
             Keep-Alive:
               schema:
                 type: string
+                minLength: 0
+                maxLength: 0
               example: timeout=5
-          description: Classrooms schedule
+          description: Classrooms hours
           content:
             application/json:
               schema:
@@ -1063,10 +1124,8 @@ paths:
                   properties:
                     id:
                       type: string
-                      format: utc-millisec
                     nome:
                       type: string
-                      format: color
                     aulas:
                       type: array
                       items:
@@ -1078,7 +1137,6 @@ paths:
                             type: string
                           periodoCard:
                             type: string
-                            format: utc-millisec
                           disciplina:
                             type: object
                             properties:
@@ -1102,12 +1160,1217 @@ paths:
                               properties:
                                 id:
                                   type: string
-                                  format: utc-millisec
                                 nome:
                                   type: string
-                                  format: color
                           horarios:
                             type: array
                             items:
                               type: string
-                              format: style
+  /api/periods/search:
+    parameters: []
+    get:
+      summary: Periods search
+      parameters:
+        - name: id
+          in: query
+          required: false
+          description: The school period ID
+          example: '1'
+          schema:
+            deprecated: false
+            type: string
+        - name: name
+          in: query
+          required: false
+          description: The name of the school period
+          example: '1'
+          schema:
+            deprecated: false
+            type: string
+      responses:
+        '200':
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+              example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+              example: '*'
+            Content-Type:
+              schema:
+                type: string
+              example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+              example: '84'
+            ETag:
+              schema:
+                type: string
+              example: W/"54-cb6Lo2tE/eDUgk88RTFTo3fx5FI"
+            Date:
+              schema:
+                type: string
+              example: Tue, 15 Jul 2025 19:50:51 GMT
+            Connection:
+              schema:
+                type: string
+              example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+              example: timeout=5
+          description: Periods search
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: utc-millisec
+                  period:
+                    type: string
+                    format: utc-millisec
+                  name:
+                    type: string
+                    format: utc-millisec
+                  short:
+                    type: string
+                    format: utc-millisec
+                  starttime:
+                    type: string
+                  endtime:
+                    type: string
+                    format: style
+  /api/subjects/search:
+    parameters: []
+    get:
+      summary: Subjects search
+      parameters:
+        - name: id
+          in: query
+          required: false
+          description: The school subject ID
+          example: '*1'
+          schema:
+            deprecated: false
+            type: string
+        - name: name
+          in: query
+          required: false
+          description: The name of the school subject
+          example: Informática
+          schema:
+            deprecated: false
+            type: string
+      responses:
+        '200':
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+              example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+              example: '*'
+            Content-Type:
+              schema:
+                type: string
+              example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+              example: '110'
+            ETag:
+              schema:
+                type: string
+              example: W/"6e-o9LVemQQ8r8kB3mz/JJ7ZN9IKH4"
+            Date:
+              schema:
+                type: string
+              example: Tue, 15 Jul 2025 19:54:35 GMT
+            Connection:
+              schema:
+                type: string
+              example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+              example: timeout=5
+          description: Subjects search
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  short:
+                    type: string
+  /api/teachers/search:
+    parameters: []
+    get:
+      summary: Teachers search
+      parameters:
+        - name: id
+          in: query
+          required: false
+          description: The teacher's ID
+          example: '*42'
+          schema:
+            deprecated: false
+            type: string
+        - name: name
+          in: query
+          required: false
+          description: The name of the teacher
+          example: Jezer
+          schema:
+            deprecated: false
+            type: string
+      responses:
+        '200':
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+              example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+              example: '*'
+            Content-Type:
+              schema:
+                type: string
+              example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+              example: '65'
+            ETag:
+              schema:
+                type: string
+              example: W/"41-OmBP6om3g3ReG/1UvKz0zmBNj8E"
+            Date:
+              schema:
+                type: string
+              example: Wed, 16 Jul 2025 20:44:28 GMT
+            Connection:
+              schema:
+                type: string
+              example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+              example: timeout=5
+          description: Teachers search
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  short:
+                    type: string
+  /api/classes/search:
+    parameters: []
+    get:
+      summary: Classes search
+      parameters:
+        - name: id
+          in: query
+          required: false
+          description: The class ID
+          example: '-389'
+          schema:
+            deprecated: false
+            type: string
+        - name: name
+          in: query
+          required: false
+          description: The name of the class
+          example: '321'
+          schema:
+            deprecated: false
+            type: string
+      responses:
+        '200':
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+              example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+              example: '*'
+            Content-Type:
+              schema:
+                type: string
+              example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+              example: '41'
+            ETag:
+              schema:
+                type: string
+              example: W/"29-wEer9/dz4ggK4b81yTvtq6pknls"
+            Date:
+              schema:
+                type: string
+              example: Wed, 16 Jul 2025 20:56:56 GMT
+            Connection:
+              schema:
+                type: string
+              example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+              example: timeout=5
+          description: Classes search
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: utc-millisec
+                  name:
+                    type: string
+                    format: utc-millisec
+                  short:
+                    type: string
+                    format: color
+  /api/classrooms/search:
+    parameters: []
+    get:
+      summary: Classrooms search
+      parameters:
+        - name: id
+          in: query
+          required: false
+          description: The classroom ID
+          example: '-5'
+          schema:
+            deprecated: false
+            type: string
+        - name: name
+          in: query
+          required: false
+          example: '305'
+          schema:
+            deprecated: false
+      responses:
+        '200':
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+              example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+              example: '*'
+            Content-Type:
+              schema:
+                type: string
+              example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+              example: '38'
+            ETag:
+              schema:
+                type: string
+              example: W/"26-/1y2AAB0WtR3UgMMBS+JiGF7UQg"
+            Date:
+              schema:
+                type: string
+              example: Wed, 16 Jul 2025 20:59:29 GMT
+            Connection:
+              schema:
+                type: string
+              example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+              example: timeout=5
+          description: Classrooms search
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: utc-millisec
+                  name:
+                    type: string
+                    format: color
+                  short:
+                    type: string
+                    format: color
+  /api/classhours/search:
+    parameters: []
+    get:
+      summary: Classhours search
+      parameters:
+        - name: id
+          in: query
+          required: false
+          description: The school hours ID
+          example: '-389'
+          schema:
+            deprecated: false
+            type: string
+        - name: name
+          in: query
+          required: false
+          description: The name of the school hours
+          example: '321'
+          schema:
+            deprecated: false
+            type: string
+      responses:
+        '200':
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+              example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+              example: '*'
+            Content-Type:
+              schema:
+                type: string
+              example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+              example: '3309'
+            ETag:
+              schema:
+                type: string
+              example: W/"ced-SGI0zjZz7UKebvhdfQN5+1Q4Qbc"
+            Date:
+              schema:
+                type: string
+              example: Wed, 16 Jul 2025 21:02:28 GMT
+            Connection:
+              schema:
+                type: string
+              example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+              example: timeout=5
+          description: Classhours search
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: utc-millisec
+                  nome:
+                    type: string
+                    format: utc-millisec
+                  dias:
+                    type: object
+                    properties:
+                      seg:
+                        type: object
+                        properties:
+                          '7':
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                              disciplina:
+                                type: object
+                                properties:
+                                  id:
+                                    type: string
+                                  nome:
+                                    type: string
+                              professores:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                    nome:
+                                      type: string
+                              salas:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                      format: utc-millisec
+                                    name:
+                                      type: string
+                                    short:
+                                      type: string
+                              horarios:
+                                type: array
+                                items:
+                                  type: string
+                                  format: style
+                          '10':
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                              disciplina:
+                                type: object
+                                properties:
+                                  id:
+                                    type: string
+                                  nome:
+                                    type: string
+                              professores:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                    nome:
+                                      type: string
+                              salas:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                      format: utc-millisec
+                                    name:
+                                      type: string
+                                    short:
+                                      type: string
+                              horarios:
+                                type: array
+                                items:
+                                  type: string
+                                  format: style
+                          '11':
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                              disciplina:
+                                type: object
+                                properties:
+                                  id:
+                                    type: string
+                                  nome:
+                                    type: string
+                              professores:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                      format: utc-millisec
+                                    nome:
+                                      type: string
+                              salas:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                      format: utc-millisec
+                                    name:
+                                      type: string
+                                      format: color
+                                    short:
+                                      type: string
+                                      format: color
+                              horarios:
+                                type: array
+                                items:
+                                  type: string
+                                  format: style
+                      ter:
+                        type: object
+                        properties:
+                          '7':
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                              disciplina:
+                                type: object
+                                properties:
+                                  id:
+                                    type: string
+                                  nome:
+                                    type: string
+                              professores:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                    nome:
+                                      type: string
+                              salas:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                      format: utc-millisec
+                                    name:
+                                      type: string
+                                    short:
+                                      type: string
+                              horarios:
+                                type: array
+                                items:
+                                  type: string
+                                  format: style
+                          '10':
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                              disciplina:
+                                type: object
+                                properties:
+                                  id:
+                                    type: string
+                                  nome:
+                                    type: string
+                              professores:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                    nome:
+                                      type: string
+                              salas:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                      format: utc-millisec
+                                    name:
+                                      type: string
+                                    short:
+                                      type: string
+                              horarios:
+                                type: array
+                                items:
+                                  type: string
+                                  format: style
+                      qua:
+                        type: object
+                        properties:
+                          '7':
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                              disciplina:
+                                type: object
+                                properties:
+                                  id:
+                                    type: string
+                                  nome:
+                                    type: string
+                              professores:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                    nome:
+                                      type: string
+                              salas:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                      format: utc-millisec
+                                    name:
+                                      type: string
+                                    short:
+                                      type: string
+                              horarios:
+                                type: array
+                                items:
+                                  type: string
+                                  format: style
+                          '9':
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                              disciplina:
+                                type: object
+                                properties:
+                                  id:
+                                    type: string
+                                  nome:
+                                    type: string
+                              professores:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                    nome:
+                                      type: string
+                              salas:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                      format: utc-millisec
+                                    name:
+                                      type: string
+                                      format: color
+                                    short:
+                                      type: string
+                                      format: color
+                              horarios:
+                                type: array
+                                items:
+                                  type: string
+                                  format: style
+                          '10':
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                              disciplina:
+                                type: object
+                                properties:
+                                  id:
+                                    type: string
+                                  nome:
+                                    type: string
+                              professores:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                    nome:
+                                      type: string
+                              salas:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                      format: utc-millisec
+                                    name:
+                                      type: string
+                                    short:
+                                      type: string
+                              horarios:
+                                type: array
+                                items:
+                                  type: string
+                                  format: style
+                      qui:
+                        type: object
+                        properties:
+                          '7':
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                              disciplina:
+                                type: object
+                                properties:
+                                  id:
+                                    type: string
+                                  nome:
+                                    type: string
+                              professores:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                    nome:
+                                      type: string
+                              salas:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                      format: utc-millisec
+                                    name:
+                                      type: string
+                                      format: color
+                                    short:
+                                      type: string
+                                      format: color
+                              horarios:
+                                type: array
+                                items:
+                                  type: string
+                                  format: style
+                          '9':
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                              disciplina:
+                                type: object
+                                properties:
+                                  id:
+                                    type: string
+                                  nome:
+                                    type: string
+                              professores:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                    nome:
+                                      type: string
+                              salas:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                      format: utc-millisec
+                                    name:
+                                      type: string
+                                    short:
+                                      type: string
+                              horarios:
+                                type: array
+                                items:
+                                  type: string
+                                  format: style
+                          '11':
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                              disciplina:
+                                type: object
+                                properties:
+                                  id:
+                                    type: string
+                                  nome:
+                                    type: string
+                              professores:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                    nome:
+                                      type: string
+                              salas:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                      format: utc-millisec
+                                    name:
+                                      type: string
+                                      format: color
+                                    short:
+                                      type: string
+                                      format: color
+                              horarios:
+                                type: array
+                                items:
+                                  type: string
+                                  format: style
+                      sex:
+                        type: object
+                        properties:
+                          '7':
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                              disciplina:
+                                type: object
+                                properties:
+                                  id:
+                                    type: string
+                                  nome:
+                                    type: string
+                              professores:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                    nome:
+                                      type: string
+                              salas:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                      format: utc-millisec
+                                    name:
+                                      type: string
+                                    short:
+                                      type: string
+                              horarios:
+                                type: array
+                                items:
+                                  type: string
+                                  format: style
+                          '9':
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                              disciplina:
+                                type: object
+                                properties:
+                                  id:
+                                    type: string
+                                  nome:
+                                    type: string
+                              professores:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                    nome:
+                                      type: string
+                              salas:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                      format: utc-millisec
+                                    name:
+                                      type: string
+                                      format: color
+                                    short:
+                                      type: string
+                                      format: color
+                              horarios:
+                                type: array
+                                items:
+                                  type: string
+                                  format: style
+                          '11':
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                              disciplina:
+                                type: object
+                                properties:
+                                  id:
+                                    type: string
+                                  nome:
+                                    type: string
+                              professores:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                    nome:
+                                      type: string
+                              salas:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: string
+                                      format: utc-millisec
+                                    name:
+                                      type: string
+                                      format: color
+                                    short:
+                                      type: string
+                                      format: color
+                              horarios:
+                                type: array
+                                items:
+                                  type: string
+                                  format: style
+  /api/teachershours/search:
+    parameters: []
+    get:
+      summary: Teacher's hours search
+      parameters:
+        - name: id
+          in: query
+          required: false
+          description: The teacher's hours ID
+          example: '*42'
+          schema:
+            deprecated: false
+            type: string
+        - name: name
+          in: query
+          required: false
+          description: The name  of the teacher's hours
+          example: Jezer
+          schema:
+            type: string
+      responses:
+        '200':
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+              example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+              example: '*'
+            Content-Type:
+              schema:
+                type: string
+              example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+              example: '1162'
+            ETag:
+              schema:
+                type: string
+              example: W/"48a-viCHLerLoN9WYY6vTtU5CsSPa54"
+            Date:
+              schema:
+                type: string
+              example: Wed, 16 Jul 2025 21:16:19 GMT
+            Connection:
+              schema:
+                type: string
+              example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+              example: timeout=5
+          description: Teacher's hours search
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  nome:
+                    type: string
+                  aulas:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        cardId:
+                          type: string
+                        dia:
+                          type: string
+                        periodoCard:
+                          type: string
+                          format: utc-millisec
+                        disciplina:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                            nome:
+                              type: string
+                        turmas:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                format: utc-millisec
+                              nome:
+                                type: string
+                                format: utc-millisec
+                        salas:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                format: utc-millisec
+                              name:
+                                type: string
+                              short:
+                                type: string
+                        horarios:
+                          type: array
+                          items:
+                            type: string
+                            format: style
+  /api/classroomshours/search:
+    parameters: []
+    get:
+      summary: Classrooms hours search
+      parameters:
+        - name: id
+          in: query
+          required: false
+          description: The class hours ID
+          example: '-5'
+          schema:
+            deprecated: false
+            type: string
+        - name: name
+          in: query
+          required: false
+          description: The name of the class hours
+          example: '305'
+          schema:
+            deprecated: false
+            type: string
+      responses:
+        '200':
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+              example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+              example: '*'
+            Content-Type:
+              schema:
+                type: string
+              example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+              example: '2022'
+            ETag:
+              schema:
+                type: string
+              example: W/"7e6-3B9rcDH6dvV2YBTXyEDC6SSkDoQ"
+            Date:
+              schema:
+                type: string
+              example: Wed, 16 Jul 2025 21:20:28 GMT
+            Connection:
+              schema:
+                type: string
+              example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+              example: timeout=5
+          description: Classrooms hours search
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: utc-millisec
+                  nome:
+                    type: string
+                    format: color
+                  aulas:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        cardId:
+                          type: string
+                        dia:
+                          type: string
+                        periodoCard:
+                          type: string
+                          format: utc-millisec
+                        disciplina:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                            nome:
+                              type: string
+                        professores:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                              nome:
+                                type: string
+                        turmas:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                              nome:
+                                type: string
+                        horarios:
+                          type: array
+                          items:
+                            type: string
+                            format: style

@@ -21,6 +21,8 @@ Este projeto usa a função `fetchHorarioTurmas` do projeto [Edupage Restinga Ho
 
 A documentação da API, incluindo seus _endpoints_, está disponível on-line em: <https://viccios.github.io/timetable-restinga-fetcher/>
 
+A especificão OpenAPI está disponível no arquivo `openapi.json`.
+
 ## 💪 Instalação
 
 Clone o repositório:
